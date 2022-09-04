@@ -1,2 +1,3 @@
 # commandeer-example
-Example of using the commandeer library
+
+A simple example of using the [commandeer library](https://github.com/mtesauro/commandeer)
