@@ -48,7 +48,12 @@ func main() {
 	testPkg.LogError("All Targets have been created - error")
 
 	// Add a single command
-	testPkg.AddCmd("ls ./", "ls command failed", false, 0, "Ubuntu:21.04")
+	err = testPkg.AddCmd("ls ./", "ls command failed", false, 0, "Ubuntu:21.04")
+	if err != nil {
+		fmt.Printf("Error was:\n%v\n", err)
+		os.Exit(1)
+	}
+	testPkg.SetCmdLog(logCmd)
 
 	// Load multiple commands
 	cmdList := []c.SingleCmd{
